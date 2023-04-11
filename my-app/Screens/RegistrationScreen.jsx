@@ -183,6 +183,7 @@ export default function RegistrationScreen() {
                     <Text style={styles.toShowPasswordTitle}>
                       {hidePass ? "to show" : "hide"}
                     </Text>
+
                     {/* <Icon
                       name={hidePass ? "eye-slash" : "eye"}
                       onPress={() => setHidePass(!hidePass)}
@@ -204,7 +205,9 @@ export default function RegistrationScreen() {
               </View>
               <View>
                 {!isShowKeyboard && (
-                  <Text style={styles.text}>Do you have account? Login</Text>
+                  <Text style={styles.text}>
+                    Already have an account? Login
+                  </Text>
                 )}
               </View>
             </View>
@@ -234,7 +237,7 @@ const styles = StyleSheet.create({
   },
 
   avatarContainer: {
-    // position: "relative",
+    position: "relative",
     alignItems: "center",
     justifyContent: "center",
 
@@ -263,7 +266,6 @@ const styles = StyleSheet.create({
     borderColor: "#E8E8E8",
   },
   inputWrapper: {
-    // alignItems: "center",
     marginBottom: 16,
   },
   input: {
@@ -277,10 +279,10 @@ const styles = StyleSheet.create({
     color: "#212121",
     fontFamily: "ChakraPetch-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
-    padding: 16,
+    paddingHorizontal: 16,
   },
   title: {
     fontFamily: "ChakraPetch-Regular",
@@ -329,7 +331,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#1B4371",
     marginTop: 16,
-    marginBottom: 45,
+    marginBottom: 78,
   },
   toShowPasswordWrapper: {
     position: "relative",
