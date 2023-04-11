@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "ChakraPetch-Regular",
     fontStyle: "normal",
-    fontWeight: 500,
+    // fontWeight: 500,
     fontSize: 30,
     lineHeight: 35,
     textAlign: "center",
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
   btnTitle: {
     fontFamily: "ChakraPetch-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
     color: Platform.OS === "ios" ? "#FF6C00" : "#FFFFFF",
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "ChakraPetch-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
     textAlign: "center",
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   toShowPasswordTitle: {
     fontFamily: "ChakraPetch-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
     color: "#1B4371",
