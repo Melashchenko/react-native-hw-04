@@ -29,11 +29,11 @@ const initialState = {
 
 SplashScreen.preventAutoHideAsync();
 
-export default function RegistrationScreen() {
+export default function RegistrationScreen({ navigation }) {
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [input, setInput] = useState(initialState);
   const [fontsLoaded] = useFonts({
-    "ChakraPetch-Regular": require("../assets/fonts/ChakraPetch-Regular.ttf"),
+    "ChakraPetch-Regular": require("../../../assets/fonts/ChakraPetch-Regular.ttf"),
   });
 
   const [isFocused, setIsFocused] = useState({
@@ -93,7 +93,7 @@ export default function RegistrationScreen() {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <ImageBackground
           style={styles.image}
-          source={require("../assets/images/photo-bg.jpg")}
+          source={require("../../../assets/images/photo-bg.jpg")}
         >
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -102,7 +102,7 @@ export default function RegistrationScreen() {
               <View style={styles.avatarContainer}>
                 <Image
                   style={styles.avatar}
-                  source={require("../assets/images/Rectangle.jpg")}
+                  source={require("../../../assets/images/Rectangle.jpg")}
                 ></Image>
                 <TouchableOpacity
                   activeOpacity={0.8}
@@ -110,7 +110,7 @@ export default function RegistrationScreen() {
                   onPress={onSubmit}
                 >
                   <Image
-                    source={require("../assets/images/Union2.png")}
+                    source={require("../../../assets/images/Union2.png")}
                   ></Image>
                 </TouchableOpacity>
               </View>
@@ -199,15 +199,19 @@ export default function RegistrationScreen() {
                     style={styles.btn}
                     onPress={onSubmit}
                   >
-                    <Text style={styles.btnTitle}>Registration</Text>
+                    <Text style={styles.btnTitle}>Sign up</Text>
                   </TouchableOpacity>
                 )}
               </View>
               <View>
                 {!isShowKeyboard && (
-                  <Text style={styles.text}>
-                    Already have an account? Login
-                  </Text>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("Login")}
+                  >
+                    <Text style={styles.text}>
+                      Already have an account? Sign in
+                    </Text>
+                  </TouchableOpacity>
                 )}
               </View>
             </View>

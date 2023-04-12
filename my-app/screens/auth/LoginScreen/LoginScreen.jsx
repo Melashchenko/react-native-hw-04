@@ -18,22 +18,20 @@ import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 
 const initialState = {
-  login: "",
   email: "",
   password: "",
 };
 
 SplashScreen.preventAutoHideAsync();
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [input, setInput] = useState(initialState);
   const [fontsLoaded] = useFonts({
-    "ChakraPetch-Regular": require("../assets/fonts/ChakraPetch-Regular.ttf"),
+    "ChakraPetch-Regular": require("../../../assets/fonts/ChakraPetch-Regular.ttf"),
   });
 
   const [isFocused, setIsFocused] = useState({
-    login: false,
     email: false,
     password: false,
   });
@@ -75,7 +73,7 @@ export default function LoginScreen() {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <ImageBackground
           style={styles.image}
-          source={require("../assets/images/photo-bg.jpg")}
+          source={require("../../../assets/images/photo-bg.jpg")}
         >
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -142,13 +140,17 @@ export default function LoginScreen() {
                     style={styles.btn}
                     onPress={onSubmit}
                   >
-                    <Text style={styles.btnTitle}>Login</Text>
+                    <Text style={styles.btnTitle}>Sign in</Text>
                   </TouchableOpacity>
                 )}
               </View>
               <View>
                 {!isShowKeyboard && (
-                  <Text style={styles.text}>No account? Sign up</Text>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("Register")}
+                  >
+                    <Text style={styles.text}>No account? Sign up</Text>
+                  </TouchableOpacity>
                 )}
               </View>
             </View>
