@@ -56,6 +56,7 @@ export default function LoginScreen({ navigation }) {
   const onSubmit = () => {
     console.log(input);
     setInput(initialState);
+    navigation.navigate("Home");
   };
 
   const onLayoutRootView = useCallback(async () => {

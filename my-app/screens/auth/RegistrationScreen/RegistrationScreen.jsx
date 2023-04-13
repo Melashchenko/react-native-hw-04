@@ -76,6 +76,7 @@ export default function RegistrationScreen({ navigation }) {
   const onSubmit = () => {
     console.log(input);
     setInput(initialState);
+    navigation.navigate("Home");
   };
 
   const onLayoutRootView = useCallback(async () => {
